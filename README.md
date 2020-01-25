@@ -2,6 +2,19 @@
 
 ---
 
+## Liste des tâches
+
+- [ ] Liste des objectifs
+  - [x] Position
+  - [x] Calculs des distances par rapport au robot
+- [ ] Choix des objectifs
+  - [x] Basique
+  - [ ] Avancé
+- [ ] Déplacements
+- [ ] Prise en compte des obstacles
+
+## Résumé des règles
+
 Première version pour la stratégie : coût = distance
 
 _On pourra ensuite réfléchir à quelque chose de plus poussé, par exemple avec un ratio gain de points/temps nécessaire_
