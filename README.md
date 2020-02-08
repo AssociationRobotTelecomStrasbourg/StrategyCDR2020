@@ -9,7 +9,7 @@
   - [x] Calculs des distances par rapport au robot
 - [ ] Choix des objectifs
   - [x] Basique
-  - [ ] Avancé
+  - [] Avancé
 - [ ] Déplacements
 - [ ] Prise en compte des obstacles
 
