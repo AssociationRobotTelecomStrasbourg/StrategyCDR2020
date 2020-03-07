@@ -3,21 +3,29 @@ import time
 
 Obj=[['m',[230,2022],0],['m',[635,2022],0],['p',[300,0],0],['b',[300,400],0,'r'],['b',[450,510],0,'v'],['b',[450,1080],0,'r'],['b',[300,1200],0,'v'],['b',[670,100],0,'r'],['b',[950,400],0,'v'],['b',[1100,800],0,'r'],['b',[1270,1200],0,'v'],['b',[1065,1650],0,'v'],['b',[1005,1955],0,'r'],['b',[1335,1650],0,'r'],['b',[1395,1955],0,'v'],['b',[-67,1450],0,'r'],['b',[-67,1525],0,'v'],['b',[-67,1600],0,'r'],['b',[-67,1675],0,'v'],['b',[-67,1750],0,'r']]; # Liste des objectifs
 # b= bouee / m=manche a air / v=vert / r=rouge / p = phare
-Obstacle=[];
+Obstacle=[[1600,1600]];
 Pos=[300,800];
 
 def distance(x,y,x1,y1):
     return math.sqrt((x-x1)**2+(y-y1)**2);
 
 def calculobs(x,y,x1,y1,Pos1):
-    d=(Pos1[1]-y1+0.0001)/(Pos1[0]-x1+0.0001);
-    d1=(Pos1[1]-y+0.0001)/(Pos1[0]-x+0.0001);
+    if Pos1[0]==x:
+        A=0;
+        B=y;
+        C=0;
+    else:
+        A=((Pos1[1]-y)/(Pos1[0]-x));
+        C=y-A*x;
+        B=1;
 
-    if abs(d-d1)<1 and d*d1>0:
-
+    d=abs((A*x1+B*y1+C)/math.sqrt(A**2+B**2));
+    if d<200:
         return 1;
-    else :
+    else:
         return 0;
+
+
 
 def mainobs(Obstacle1,Obj1,Posi):
     i=0;
